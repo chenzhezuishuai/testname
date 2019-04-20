@@ -1,0 +1,14 @@
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("http://www.youdao.com")
+
+#获得cookie信息
+driver.add_cookie({"name":"shaofei","value":"dd373"})
+cookie = driver.get_cookies()
+for cookie in driver.get_cookies():
+
+#获得cookie的信息打印
+    print("%s->%s"%(cookie['name'],cookie["value"]))
+
+driver.quit()
